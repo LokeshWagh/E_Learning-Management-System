@@ -12,11 +12,13 @@ mongoose.set("strictQuery", false);
 const connectToDB = async () => {
   try {
     const { connection } = await mongoose.connect(
-      process.env.MONGO_URI || `mongodb://127.0.0.1:27017/elerning`
+     `mongodb://localhost:27017/LMS`
     );
 
     if (connection) {
-      console.log(`Connected to MongoDB: ${connection.host}`);
+      // console.log(`Connected to MongoDB: ${connection.host}`);
+      console.log(`Connected to MongoDB at ${connection.host}:${connection.port}, DB: ${connection.name}`);
+
     }
   } catch (error) {
     console.log(error);

@@ -38,6 +38,11 @@ app.use('/api/v1/courses', courseRoutes);
 app.use('/api/v1/payments', paymentRoutes);
 app.use('/api/v1', miscRoutes);
 
+
+//
+app.get("/", (_req, res) => {
+  res.send("Welcome to the LMS API ");
+});
 // Default catch all route - 404
 app.all('*', (_req, res) => {
   res.status(404).send('OOPS!!! 404 Page Not Found');

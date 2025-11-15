@@ -48,6 +48,7 @@ export const createNewCourse = createAsyncThunk(
 
       const response = await res;
       return response.data;
+      
     } catch (error) {
       toast.error(error?.response?.data?.message);
     }
